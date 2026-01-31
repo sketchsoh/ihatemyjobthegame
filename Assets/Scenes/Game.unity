@@ -539,6 +539,9 @@ MonoBehaviour:
   hood: {fileID: 2048479959}
   game: {fileID: 1237427722}
   animSpeed: 0.75
+  minIdleTime: 2
+  maxIdleTime: 5
+  kidBoredTime: 5
 --- !u!1 &506780964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,7 +1456,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 9
   m_Sprite: {fileID: 21300000, guid: 7775b993fc6624db58cc42b7eae71266, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2542,7 +2545,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 10
   m_Sprite: {fileID: -4166580829966953713, guid: 18a4383b8cc3d4665ba3cd569ea7ec3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -13,13 +13,29 @@ public class GameManager : MonoBehaviour
     public GameObject game;
     private const float gameOn = 0f;
     private const float gameOff = -8f;
-    private Coroutine hoodToggleCoroutine;
-    private Coroutine gameToggleCoroutine;
     public float animSpeed = 0.5f;
+
+    [Header("Kids")]
+    public GameObject kidPrefab;
+    public float minIdleTime = 2f;
+    public float maxIdleTime = 5f;
+    private float idleTimer;
+    public float kidBoredTime = 5f;
+    private bool kidPresent;
+    private float kidPresentTimer;
+    private float interacting;
+    
     void Start()
     {
         hoodMode = false;
         gameMode = true;
+        kidPresent = false;
+    }
+
+    void Update()
+    {
+        if (kidPresent) return;
+        
     }
     public void HoodToggle()
     {
@@ -28,7 +44,6 @@ public class GameManager : MonoBehaviour
             .WithEase(Ease.InOutElastic)
             .BindToLocalPositionY(hood.transform);
     }
-
     public void GameToggle()
     {
         gameMode = !gameMode;
@@ -36,4 +51,18 @@ public class GameManager : MonoBehaviour
             .WithEase(Ease.InOutExpo)
             .BindToLocalPositionY(game.transform);
     }
+
+    private void KidTimer()
+    {
+        if (kidPresent)
+        {
+            kidBoredTime -= Time.deltaTime;
+            if (kidBoredTime <= 0f)
+            {
+                //Todo:
+            }
+        }
+        
+    }
+    
 }
