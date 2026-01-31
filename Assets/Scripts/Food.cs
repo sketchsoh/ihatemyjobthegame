@@ -11,6 +11,7 @@ public class Food : MonoBehaviour
         G4,
         G5,
         B1,
+        B2
     };
     public FoodType foodType;
     private Rigidbody2D rb2d;
@@ -65,6 +66,11 @@ public class Food : MonoBehaviour
                     break;
                 }
                 case FoodType.B1:
+                {
+                    healthBar.TakeDamage(10);
+                    break;
+                }
+                case FoodType.B2:
                 {
                     healthBar.TakeDamage(20);
                     break;

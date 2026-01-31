@@ -1,4 +1,6 @@
 using System.Collections;
+using LitMotion;
+using LitMotion.Extensions;
 using UnityEngine;
 
 public class HealthBar : MonoBehaviour
@@ -9,8 +11,12 @@ public class HealthBar : MonoBehaviour
     [SerializeField]
     private float healthDrainRate;
     private Coroutine healthBarCoroutine;
+    private Coroutine redFlashCoroutine;
     [SerializeField]
     private float animDuration;
+    
+    [SerializeField]
+    private GameObject redFlashOverlay;
 
     private bool passiveDrain;
     void Start()
@@ -21,16 +27,6 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(10);
-        }
-
-        if (Input.GetKeyUp(KeyCode.Return))
-        {
-            Heal(10);
-        }
-
         if (currentHealth <= 0)
         {
             gameObject.transform.localScale = new Vector3(0, 1, 1);
@@ -45,6 +41,7 @@ public class HealthBar : MonoBehaviour
     {
         float health  = currentHealth - damage;
         UpdateHealthBar(health);
+        LMotion.Create(1.0f, 0.0f, 0.5f).WithEase(Ease.InOutQuad).BindToColorA(redFlashOverlay.GetComponent<SpriteRenderer>());
     }
 
     public void Heal(float heal)

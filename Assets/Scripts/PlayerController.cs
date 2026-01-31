@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        CheckForInputs();
     }
 
     void CheckForInputs()
@@ -20,11 +20,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             //TODO: call flip hood in Game Manager
+            gameManager.HoodToggle();
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
             //TODO: call bring down game in Game Manager
+            gameManager.GameToggle();
         }
 
         if (Input.GetKeyDown(KeyCode.A))
