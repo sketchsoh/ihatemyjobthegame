@@ -119,6 +119,71 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &765095154
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3183145063954331357, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
+      propertyPath: musicSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183145063954331357, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
+      propertyPath: 'musicSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 17504057d868446c88d8781c2ca151f8, type: 3}
+    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924252157142199605, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
 --- !u!1 &950141507
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +433,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Too many kids saw you without your mask.\n\nYou\u2019re fired."
+  m_text: "You didn't entertain the kids.\n\nYou\u2019re fired."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2663aecd07eda41da82429229ec2da6e, type: 2}
   m_sharedMaterial: {fileID: 1005302625709318422, guid: 2663aecd07eda41da82429229ec2da6e, type: 2}
@@ -453,3 +518,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 950141510}
   - {fileID: 1508451576}
+  - {fileID: 765095154}
