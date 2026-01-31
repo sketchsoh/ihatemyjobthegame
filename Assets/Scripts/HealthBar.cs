@@ -79,6 +79,7 @@ public class HealthBar : MonoBehaviour
                 gameObject.transform.localScale = new Vector3(0, 1, 1);
                 currentHealth = 0;
                 //TODO: Add Lose Screen
+                Debug.Log("LOSE by game");
                 StopCoroutine(healthBarCoroutine);
             }
             gameObject.transform.localScale = new Vector3(newHealthBarFill, gameObject.transform.localScale.y, gameObject.transform.localScale.z);

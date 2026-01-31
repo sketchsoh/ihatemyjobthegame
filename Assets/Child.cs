@@ -36,5 +36,8 @@ public class Child : MonoBehaviour
         childEyes.sprite = childEyesSprites[Random.Range(0, childEyesSprites.Length)];
         childBrows.sprite = childBrowsSprites[Random.Range(0, childBrowsSprites.Length)];
         childMouth.sprite = childMouthSprites[Random.Range(0, childMouthSprites.Length)];
+        Color hairColor = Random.ColorHSV(0,1,0.3f,0.7f,0.5f,1,1,1);
+        childHair.color = hairColor;
+        childBangs.color = hairColor;
     }
 }
