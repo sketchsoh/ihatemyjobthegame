@@ -433,7 +433,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Too many kids saw you without your mask.\n\nYou\u2019re fired."
+  m_text: "You didn't entertain the kids.\n\nYou\u2019re fired."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2663aecd07eda41da82429229ec2da6e, type: 2}
   m_sharedMaterial: {fileID: 1005302625709318422, guid: 2663aecd07eda41da82429229ec2da6e, type: 2}
