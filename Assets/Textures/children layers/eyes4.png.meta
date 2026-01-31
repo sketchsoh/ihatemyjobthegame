@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 18a4383b8cc3d4665ba3cd569ea7ec3e
+guid: 6474c209745ad4436b64e112d79da5ae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4166580829966953713
-    second: Mask_0
+      213: 816738721387443585
+    second: eyes4_0
+  - first:
+      213: 2074499834835070291
+    second: eyes4_1
+  - first:
+      213: 233420654234637541
+    second: eyes4_2
+  - first:
+      213: -8297626078482107388
+    second: eyes4_3
+  - first:
+      213: 8860710656469709923
+    second: eyes4_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +108,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mask_0
+      name: eyes4_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 706
+        y: 525
+        width: 188
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f031ed58fc45d26c0800000000000000
-      internalID: -4166580829966953713
+      spriteID: 185fa923a83a55b00800000000000000
+      internalID: 816738721387443585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyes4_1
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 647
+        width: 107
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35d63fdcb9a1acc10800000000000000
+      internalID: 2074499834835070291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyes4_2
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 525
+        width: 188
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e415ea29d64d3300800000000000000
+      internalID: 233420654234637541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyes4_3
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 647
+        width: 107
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4047e095b09e8dc80800000000000000
+      internalID: -8297626078482107388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyes4_4
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 505
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3643560656197fa70800000000000000
+      internalID: 8860710656469709923
       vertices: []
       indices: 
       edges: []
@@ -147,8 +234,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Mask_0: -4166580829966953713
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 18a4383b8cc3d4665ba3cd569ea7ec3e
+guid: 87ac81fb083df4993a94541f2b7c0ca0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4166580829966953713
-    second: Mask_0
+      213: -1854389636531500643
+    second: quithover_0
+  - first:
+      213: -4258232844859181051
+    second: quithover_1
+  - first:
+      213: -5510717451436975570
+    second: quithover_2
+  - first:
+      213: 106124020655048333
+    second: quithover_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,40 +105,115 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mask_0
+      name: quithover_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 1048
+        y: 85
+        width: 38
+        height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f031ed58fc45d26c0800000000000000
-      internalID: -4166580829966953713
+      spriteID: d99cf575372e346e0800000000000000
+      internalID: -1854389636531500643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quithover_1
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 89
+        width: 35
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5087447e9c7b7e4c0800000000000000
+      internalID: -4258232844859181051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quithover_2
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 90
+        width: 11
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2a9d89ccaff583b0800000000000000
+      internalID: -5510717451436975570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quithover_3
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 91
+        width: 36
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d86c7490c37097100800000000000000
+      internalID: 106124020655048333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quithover_4
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 84
+        width: 120
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f6579213e0f411e87287af598cf020
+      internalID: 1228400166
       vertices: []
       indices: 
       edges: []
@@ -138,7 +222,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +232,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mask_0: -4166580829966953713
+      quithover_0: -1854389636531500643
+      quithover_1: -4258232844859181051
+      quithover_2: -5510717451436975570
+      quithover_3: 106124020655048333
+      quithover_4: 1228400166
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
