@@ -8,22 +8,24 @@ public class Food : MonoBehaviour
         G1,
         G2,
         G3,
+        G4,
+        G5,
         B1,
-        B2,
-        B3
     };
     public FoodType foodType;
     private Rigidbody2D rb2d;
     private float speed = 100;
+    private HealthBar healthBar;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    public void InitializeFood(float foodSpeed)
+    public void InitializeFood(float foodSpeed, GameObject healthBar)
     {
         speed = foodSpeed;
+        this.healthBar = healthBar.GetComponent<HealthBar>();
     }
 
     void Update()
@@ -31,7 +33,7 @@ public class Food : MonoBehaviour
         rb2d.linearVelocity = new Vector3(0, -speed * Time.deltaTime, 0);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -39,36 +41,40 @@ public class Food : MonoBehaviour
             {
                 case FoodType.G1:
                 {
-                    other.gameObject.GetComponent<HealthBar>().Heal(10);
+                    healthBar.Heal(10);
                     break;
                 }
                 case FoodType.G2:
                 {
-                    other.gameObject.GetComponent<HealthBar>().Heal(20);
+                    healthBar.Heal(10);
                     break;
                 }
                 case FoodType.G3:
                 {
-                    other.gameObject.GetComponent<HealthBar>().Heal(30);
+                    healthBar.Heal(20);
+                    break;
+                }
+                case FoodType.G4:
+                {
+                    healthBar.Heal(20);
+                    break;
+                }
+                case FoodType.G5:
+                {
+                    healthBar.Heal(30);
                     break;
                 }
                 case FoodType.B1:
                 {
-                    other.gameObject.GetComponent<HealthBar>().TakeDamage(10);
-                    break;
-                }
-                case FoodType.B2:
-                {
-                    other.gameObject.GetComponent<HealthBar>().TakeDamage(20);
-                    break;
-                }
-                case FoodType.B3:
-                {
-                    other.gameObject.GetComponent<HealthBar>().TakeDamage(30);
+                    healthBar.TakeDamage(20);
                     break;
                 }
             }
+        }
+
+        if (!other.gameObject.CompareTag("Food"))
+        {
             Destroy(gameObject);
-        } 
+        }
     }
 }
