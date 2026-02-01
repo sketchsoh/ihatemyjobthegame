@@ -96,7 +96,7 @@ public class SoundManager : MonoBehaviour
 
         while (target.volume < targetVolume)
         {
-            target.volume = Mathf.Lerp(0, 0.4f, percent);
+            target.volume = Mathf.Lerp(0, targetVolume, percent);
             percent += Time.deltaTime / duration;
             yield return null;
         }

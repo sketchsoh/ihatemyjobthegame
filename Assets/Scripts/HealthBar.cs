@@ -20,7 +20,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField]
     private GameObject redFlashOverlay;
 
-    private bool passiveDrain;
+    public bool passiveDrain;
     
     public AudioClip[] goodFoodSFX;
     public AudioClip[] badFoodSFX;

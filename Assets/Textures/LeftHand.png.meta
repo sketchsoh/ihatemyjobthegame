@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7e2afadf6e3964127bfdba5c6bdadb1b
+guid: 17b0847c84ff3434e900be944f21b738
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1030666969025724776
-    second: "Image 1-2-26 at 1.47\u202FPM_0"
+      213: -7779679759674261937
+    second: LeftHand_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Image 1-2-26 at 1.47\u202FPM_0"
+      name: LeftHand_0
       rect:
         serializedVersion: 2
-        x: 85
-        y: 198
-        width: 831
-        height: 603
+        x: 0
+        y: 0
+        width: 780
+        height: 965
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 89e3e753ad552b1f0800000000000000
-      internalID: -1030666969025724776
+      spriteID: f4eb1522a76090490800000000000000
+      internalID: -7779679759674261937
       vertices: []
       indices: 
       edges: []
@@ -160,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "Image 1-2-26 at 1.47\u202FPM_0": -1030666969025724776
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

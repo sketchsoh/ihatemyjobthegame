@@ -31,8 +31,12 @@ public class GameManager : MonoBehaviour
     private bool kidPresent;
     private float kidPresentTimer;
     private float interactingTimer;
+    private bool isInteracting;
     private int aPress;
     private int dPress;
+    
+    public GameObject leftHand;
+    public GameObject rightHand;
     
     public AudioClip[] kidEnterSFX;
     public AudioClip[] kidExitSFX;
@@ -42,6 +46,7 @@ public class GameManager : MonoBehaviour
         hoodMode = true;
         gameMode = true;
         kidPresent = false;
+        isInteracting = false;
         idleTimer = maxIdleTime;
         aPress = 0;
         dPress = 0;
@@ -61,6 +66,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameToggle()
     {
+        if (isInteracting) return;
         gameMode = !gameMode;
         LMotion.Create(game.transform.position.y, gameMode?gameOn:gameOff, animSpeed)
             .WithEase(Ease.InOutExpo)
@@ -115,7 +121,31 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        interactingTimer = 0.5f;
+        interactingTimer = 0.8f;
+        if (!isInteracting)
+        {
+            isInteracting = true;
+            LSequence.Create()
+                .Append(LMotion.Create(15f, 25f, 0.25f)
+                    .WithEase(Ease.InOutBack)
+                   .BindToLocalPositionX(leftHand.transform))
+                .AppendInterval(0.1f)
+                .Append(LMotion.Create(25f, 15f, 0.25f)
+                    .WithEase(Ease.InOutBack)
+                    .WithOnComplete(() => isInteracting = false)
+                    .BindToLocalPositionX(leftHand.transform))
+                .Run();
+            LSequence.Create()
+                .AppendInterval(0.05f)
+                .Append(LMotion.Create(45f, 35f, 0.25f)
+                    .WithEase(Ease.InOutBack)
+                    .BindToLocalPositionX(rightHand.transform))
+                .AppendInterval(0.1f)
+                .Append(LMotion.Create(35f, 45f, 0.25f)
+                    .WithEase(Ease.InOutBack)
+                    .BindToLocalPositionX(rightHand.transform))
+                .Run();
+        }
         if (aPress >= 5 && dPress >= 5)
         {
             aPress = 0;
@@ -124,14 +154,9 @@ public class GameManager : MonoBehaviour
             SoundManager.Instance.PlayRandomSFXClip(kidExitSFX, transform, true, 0.5f);
             LMotion.Create(kidWaitingPosX, kidStartingPosX, 1f)
                 .WithEase(Ease.InOutElastic)
-                .WithOnComplete(() => DestroyImmediate(kidPrefab, true))
+                .WithOnComplete(() => DestroyImmediate(currentKid, true))
                 .BindToPositionX(currentKid.transform);
         }
-    }
-
-    private IEnumerator Interact()
-    {
-        yield return new WaitForSeconds(interactingTimer);
     }
     
     private void HoodTimer()
