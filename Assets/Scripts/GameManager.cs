@@ -179,6 +179,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         hoodTimer += Time.deltaTime;
+        if (hoodTimer <= 2f) return;
         float hoodStartAlpha = 0f;
         float targetAlpha = 0.7f;
         float currentAlphaPercent = hoodTimer / hoodTime;

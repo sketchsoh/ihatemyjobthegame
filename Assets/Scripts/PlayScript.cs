@@ -74,10 +74,15 @@ public class PlayScript : MonoBehaviour, IPointerEnterHandler
 
         Fade.SetActive(true);
         LMotion.Create(0f, 1f, 0.25f)
-            .WithOnComplete((() => Fade.SetActive(false)))
+            .WithOnComplete(SettleFade)
             .BindToColorA(Fade.GetComponent<Image>());
-        SoundManager.Instance.PlayRandomSFXClip(startbtnSFX, transform, true, 1f);
+    }
+
+    private void SettleFade()
+    {
+        Fade.SetActive(false);
         StartTextBG.SetActive(true);
+        SoundManager.Instance.PlayRandomSFXClip(startbtnSFX, transform, true, 1f);
         currentState = MenuState.ShowStartText;
     }
 
