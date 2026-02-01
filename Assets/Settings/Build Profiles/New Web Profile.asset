@@ -21,6 +21,8 @@ MonoBehaviour:
   m_OverrideGlobalSceneList: 1
   m_Scenes:
   - m_enabled: 1
+    m_path: Assets/Scenes/Menu.unity
+  - m_enabled: 1
     m_path: Assets/Scenes/Game.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Lose1.unity
@@ -28,8 +30,6 @@ MonoBehaviour:
     m_path: Assets/Scenes/Lose2.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Lose3.unity
-  - m_enabled: 1
-    m_path: Assets/Scenes/Menu.unity
   - m_enabled: 1
     m_path: Assets/Scenes/EndScreen.unity
   m_ScriptingDefines: []
