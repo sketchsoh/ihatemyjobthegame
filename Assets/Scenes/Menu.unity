@@ -657,7 +657,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1608028093}
         m_TargetAssemblyTypeName: PlayScript, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1100,7 +1100,7 @@ PrefabInstance:
     - target: {fileID: 3183145063954331357, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
       propertyPath: 'musicSounds.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: ab5a66a4a7c284f89b6024930b112338, type: 3}
+      objectReference: {fileID: 8300000, guid: cb98ef387379b41eab0f281f388b9d2b, type: 3}
     - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 960

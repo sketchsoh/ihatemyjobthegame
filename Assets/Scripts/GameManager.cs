@@ -2,6 +2,7 @@ using System.Collections;
 using LitMotion;
 using LitMotion.Extensions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,6 +33,9 @@ public class GameManager : MonoBehaviour
     private float interactingTimer;
     private int aPress;
     private int dPress;
+    
+    public AudioClip[] kidEnterSFX;
+    public AudioClip[] kidExitSFX;
     
     void Start()
     {
@@ -77,6 +81,7 @@ public class GameManager : MonoBehaviour
             {
                 //Todo: LOSE
                 Debug.Log("LOSE by no interaction");
+                SceneManager.LoadScene("Lose1");
             }
             return;
         }
@@ -85,6 +90,7 @@ public class GameManager : MonoBehaviour
         if (idleTimer <= 0f)
         {
             kidPresent =  true;
+            SoundManager.Instance.PlayRandomSFXClip(kidEnterSFX, transform, true, 0.5f);
             idleTimer = Random.Range(minIdleTime, maxIdleTime);
             currentKid = Instantiate(kidPrefab);
             LMotion.Create(kidStartingPosX, kidWaitingPosX, 1f)
@@ -116,6 +122,7 @@ public class GameManager : MonoBehaviour
             aPress = 0;
             dPress = 0;
             kidPresent = false;
+            SoundManager.Instance.PlayRandomSFXClip(kidExitSFX, transform, true, 0.5f);
             LMotion.Create(kidWaitingPosX, kidStartingPosX, 1f)
                 .WithEase(Ease.InOutElastic)
                 .WithOnComplete(() => DestroyImmediate(kidPrefab, true))
@@ -144,6 +151,7 @@ public class GameManager : MonoBehaviour
         {
             //TODO: Lose Scene
             Debug.Log("LOSE By Hood");
+            SceneManager.LoadScene("Lose2");
         }
     }
     

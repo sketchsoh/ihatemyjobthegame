@@ -2,6 +2,8 @@ using System.Collections;
 using LitMotion;
 using LitMotion.Extensions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class HealthBar : MonoBehaviour
 {
@@ -19,6 +21,10 @@ public class HealthBar : MonoBehaviour
     private GameObject redFlashOverlay;
 
     private bool passiveDrain;
+    
+    public AudioClip[] goodFoodSFX;
+    public AudioClip[] badFoodSFX;
+    
     void Start()
     {
         currentHealth = maxHealth;
@@ -41,6 +47,7 @@ public class HealthBar : MonoBehaviour
     {
         float health  = currentHealth - damage;
         UpdateHealthBar(health);
+        SoundManager.Instance.PlayRandomSFXClip(badFoodSFX, transform, true, 0.5f);
         LMotion.Create(1.0f, 0.0f, 0.5f).WithEase(Ease.InOutQuad).BindToColorA(redFlashOverlay.GetComponent<SpriteRenderer>());
     }
 
@@ -52,6 +59,8 @@ public class HealthBar : MonoBehaviour
             health = maxHealth;
         }
         UpdateHealthBar(health);
+        SoundManager.Instance.PlayRandomSFXClip(goodFoodSFX, transform, true, 1f);
+
     }
 
     private void UpdateHealthBar(float newHealth)
@@ -81,6 +90,7 @@ public class HealthBar : MonoBehaviour
                 //TODO: Add Lose Screen
                 Debug.Log("LOSE by game");
                 StopCoroutine(healthBarCoroutine);
+                SceneManager.LoadScene("Lose3");
             }
             gameObject.transform.localScale = new Vector3(newHealthBarFill, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
             passiveDrain = false;

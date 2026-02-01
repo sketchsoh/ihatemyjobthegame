@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
+    
+    private ScoreManager scoreManager;
+
     public enum FoodType
     {
         G1,
@@ -21,6 +24,7 @@ public class Food : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        scoreManager = FindFirstObjectByType<ScoreManager>();
     }
 
     public void InitializeFood(float foodSpeed, GameObject healthBar)
@@ -43,36 +47,43 @@ public class Food : MonoBehaviour
                 case FoodType.G1:
                 {
                     healthBar.Heal(10);
+                    scoreManager.AddScore(10);
                     break;
                 }
                 case FoodType.G2:
                 {
                     healthBar.Heal(10);
+                    scoreManager.AddScore(10);
                     break;
                 }
                 case FoodType.G3:
                 {
                     healthBar.Heal(20);
+                    scoreManager.AddScore(20);
                     break;
                 }
                 case FoodType.G4:
                 {
                     healthBar.Heal(20);
+                    scoreManager.AddScore(20);
                     break;
                 }
                 case FoodType.G5:
                 {
                     healthBar.Heal(30);
+                    scoreManager.AddScore(30);
                     break;
                 }
                 case FoodType.B1:
                 {
                     healthBar.TakeDamage(10);
+                    scoreManager.AddScore(-10);
                     break;
                 }
                 case FoodType.B2:
                 {
                     healthBar.TakeDamage(20);
+                    scoreManager.AddScore(-20);
                     break;
                 }
             }

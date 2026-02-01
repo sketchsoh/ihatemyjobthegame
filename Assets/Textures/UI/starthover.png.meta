@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      starthover_0: -1402706764463219025
+      starthover_1: 7870890379613978094
+      starthover_2: -3223601184183841701
+      starthover_3: -6336366020416675681
+      starthover_4: 1207678932556012742
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
