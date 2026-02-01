@@ -958,8 +958,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Controls\nMove in game: \u2190 \u2192 \nW: Raise or Wear Mask:\nS : Hide
-    or Show Console\nSpam A and D : Entertain Kids"
+  m_text: "Controls\n\u2190\u2192: Move\nW: Raise or Wear Mask\nS : Hide or Show
+    Console\nSpam A and D : Entertain Kids*\n\n*Your mask must be worn and your console
+    must be away"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2663aecd07eda41da82429229ec2da6e, type: 2}
   m_sharedMaterial: {fileID: 1005302625709318422, guid: 2663aecd07eda41da82429229ec2da6e, type: 2}
@@ -986,8 +987,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 75.27
+  m_fontSizeBase: 75.27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
