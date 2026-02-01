@@ -31,4 +31,10 @@ public class ScoreManager : MonoBehaviour
         if (scoreText != null)
             scoreText.text = $"SCORE: {CurrentScore}";
     }
+
+    public void ResetScore()
+    {
+        CurrentScore = 0;
+        UpdateScoreText();
+    }
 }

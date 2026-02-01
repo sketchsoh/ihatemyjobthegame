@@ -10,7 +10,8 @@ public class EndScreenBtn : MonoBehaviour, IPointerEnterHandler
     
     public void MainMenu()
     {
-        SoundManager.Instance.TransitionMusicClip(MusicType.MainMenu, 0.5f);
+        SoundManager.Instance.TransitionMusicClip(MusicType.MainMenu, 0.5f, 0.7f);
+        ScoreManager.Instance.ResetScore();
         SceneManager.LoadScene("Menu");
     }
     
