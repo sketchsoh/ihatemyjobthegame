@@ -2,17 +2,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private GameManager gameManager;
+    public GameManager gameManager;
     public AudioClip[] maskSFX;
     public AudioClip[] controllerSFX;
     public AudioClip[] rubSFX;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        gameManager = GetComponent<GameManager>();
-    }
 
-    // Update is called once per frame
     void Update()
     {
         CheckForInputs();
@@ -35,13 +29,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             if (!gameManager.hoodMode || gameManager.gameMode) return;
-            gameManager.InteractWithKid("a");
+            gameManager.InteractWithKid("a", rubSFX);
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
             if (!gameManager.hoodMode || gameManager.gameMode) return;
-            gameManager.InteractWithKid("d");
+            gameManager.InteractWithKid("d", rubSFX);
         }
     }
 }

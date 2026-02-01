@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     
     public AudioClip[] kidEnterSFX;
     public AudioClip[] kidExitSFX;
+    public SpriteRenderer Fade;
     
     void Start()
     {
@@ -50,6 +51,8 @@ public class GameManager : MonoBehaviour
         idleTimer = maxIdleTime;
         aPress = 0;
         dPress = 0;
+        LMotion.Create(1f, 0f, 0.5f)
+            .BindToColorA(Fade);
     }
 
     void Update()
@@ -85,9 +88,12 @@ public class GameManager : MonoBehaviour
             kidPresentTimer -= Time.deltaTime;
             if (kidPresentTimer <= 0f)
             {
+                LMotion.Create(0f, 1f, 0.5f)
+                    .WithOnComplete(() => SceneManager.LoadScene("Lose1"))
+                    .BindToColorA(Fade);
                 Debug.Log("LOSE by no interaction");
                 SoundManager.Instance.TransitionMusicClip(MusicType.Lose, 0.5f);
-                SceneManager.LoadScene("Lose1");
+                kidPresentTimer = 1000f;
             }
             return;
         }
@@ -105,7 +111,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void InteractWithKid(string button)
+    public void InteractWithKid(string button, AudioClip[] interactSound)
     {
         switch (button)
         {
@@ -124,13 +130,15 @@ public class GameManager : MonoBehaviour
         interactingTimer = 0.8f;
         if (!isInteracting)
         {
+            SoundManager.Instance.PlayRandomSFXClip(interactSound, transform);
             isInteracting = true;
             LSequence.Create()
                 .Append(LMotion.Create(15f, 25f, 0.25f)
+                    .WithImmediateBind(false)
                     .WithEase(Ease.InOutBack)
                    .BindToLocalPositionX(leftHand.transform))
-                .AppendInterval(0.1f)
                 .Append(LMotion.Create(25f, 15f, 0.25f)
+                    .WithImmediateBind(false)
                     .WithEase(Ease.InOutBack)
                     .WithOnComplete(() => isInteracting = false)
                     .BindToLocalPositionX(leftHand.transform))
@@ -138,15 +146,16 @@ public class GameManager : MonoBehaviour
             LSequence.Create()
                 .AppendInterval(0.05f)
                 .Append(LMotion.Create(45f, 35f, 0.25f)
+                    .WithImmediateBind(false)
                     .WithEase(Ease.InOutBack)
                     .BindToLocalPositionX(rightHand.transform))
-                .AppendInterval(0.1f)
                 .Append(LMotion.Create(35f, 45f, 0.25f)
+                    .WithImmediateBind(false)
                     .WithEase(Ease.InOutBack)
                     .BindToLocalPositionX(rightHand.transform))
                 .Run();
         }
-        if (aPress >= 5 && dPress >= 5)
+        if (aPress >= 10 && dPress >= 10)
         {
             aPress = 0;
             dPress = 0;
@@ -154,7 +163,7 @@ public class GameManager : MonoBehaviour
             SoundManager.Instance.PlayRandomSFXClip(kidExitSFX, transform, true, 0.5f);
             LMotion.Create(kidWaitingPosX, kidStartingPosX, 1f)
                 .WithEase(Ease.InOutElastic)
-                .WithOnComplete(() => DestroyImmediate(currentKid, true))
+                .WithOnComplete(() => Destroy(currentKid))
                 .BindToPositionX(currentKid.transform);
         }
     }
@@ -171,17 +180,19 @@ public class GameManager : MonoBehaviour
         }
         hoodTimer += Time.deltaTime;
         float hoodStartAlpha = 0f;
-        float targetAlpha = 0.3f;
+        float targetAlpha = 0.7f;
         float currentAlphaPercent = hoodTimer / hoodTime;
         float hoodAlpha = Mathf.Lerp(hoodStartAlpha, targetAlpha, currentAlphaPercent);
         oopsOverlayColor.a = hoodAlpha;
         oopsOverlay.color = oopsOverlayColor;
         if (hoodTimer >= hoodTime)
         {
+            LMotion.Create(0f, 1f, 0.5f)
+                .WithOnComplete(() => SceneManager.LoadScene("Lose2"))
+                .BindToColorA(Fade);
             Debug.Log("LOSE By Hood");
-            SceneManager.LoadScene("Lose2");
+            hoodTimer = -999f;
             SoundManager.Instance.TransitionMusicClip(MusicType.Lose, 0.5f);
         }
     }
-    
 }

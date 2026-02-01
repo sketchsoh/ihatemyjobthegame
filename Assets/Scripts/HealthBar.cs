@@ -20,6 +20,8 @@ public class HealthBar : MonoBehaviour
     [SerializeField]
     private GameObject redFlashOverlay;
 
+    public SpriteRenderer Fade;
+
     public bool passiveDrain;
     
     public AudioClip[] goodFoodSFX;
@@ -90,8 +92,10 @@ public class HealthBar : MonoBehaviour
                 //TODO: Add Lose Screen
                 Debug.Log("LOSE by game");
                 StopCoroutine(healthBarCoroutine);
+                LMotion.Create(0f, 1f, 0.5f)
+                    .WithOnComplete(() => SceneManager.LoadScene("Lose3"))
+                    .BindToColorA(Fade);
                 SoundManager.Instance.TransitionMusicClip(MusicType.Lose, 0.5f);
-                SceneManager.LoadScene("Lose3");
             }
             gameObject.transform.localScale = new Vector3(newHealthBarFill, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
             passiveDrain = false;

@@ -1,6 +1,9 @@
+using LitMotion;
+using LitMotion.Extensions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayScript : MonoBehaviour, IPointerEnterHandler
 {
@@ -12,9 +15,17 @@ public class PlayScript : MonoBehaviour, IPointerEnterHandler
     public GameObject QuitBtn;
     public GameObject StartTextBG;
     public GameObject ControlsBG;
+    public GameObject Fade;
 
     private enum MenuState { WaitingToStart, ShowStartText, ShowControls }
     private MenuState currentState = MenuState.WaitingToStart;
+
+    void Start()
+    {
+        LMotion.Create(1f, 0f, 0.25f)
+            .WithOnComplete((() => Fade.SetActive(false)))
+            .BindToColorA(Fade.GetComponent<Image>());
+    }
 
     // -------------------- Unity Events --------------------
     void Update()
@@ -47,7 +58,10 @@ public class PlayScript : MonoBehaviour, IPointerEnterHandler
 
             case MenuState.ShowControls:
                 // Load the game scene
-                SceneManager.LoadScene("Game");
+                Fade.SetActive(true);
+                LMotion.Create(0f, 1f, 0.25f)
+                    .WithOnComplete((() => SceneManager.LoadScene("Game")))
+                    .BindToColorA(Fade.GetComponent<Image>());
                 SoundManager.Instance.TransitionMusicClip(MusicType.Game, 0.5f, 0.2f);
                 break;
         }
@@ -58,11 +72,13 @@ public class PlayScript : MonoBehaviour, IPointerEnterHandler
     {
         if (currentState != MenuState.WaitingToStart) return;
 
-        currentState = MenuState.ShowStartText;
-
+        Fade.SetActive(true);
+        LMotion.Create(0f, 1f, 0.25f)
+            .WithOnComplete((() => Fade.SetActive(false)))
+            .BindToColorA(Fade.GetComponent<Image>());
         SoundManager.Instance.PlayRandomSFXClip(startbtnSFX, transform, true, 1f);
-
         StartTextBG.SetActive(true);
+        currentState = MenuState.ShowStartText;
     }
 
     public void QuitGame()
