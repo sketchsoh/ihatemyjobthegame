@@ -182,7 +182,7 @@ public class GameManager : MonoBehaviour
         if (hoodTimer <= 2f) return;
         float hoodStartAlpha = 0f;
         float targetAlpha = 0.7f;
-        float currentAlphaPercent = hoodTimer / hoodTime;
+        float currentAlphaPercent = hoodTimer - 2 / hoodTime - 2;
         float hoodAlpha = Mathf.Lerp(hoodStartAlpha, targetAlpha, currentAlphaPercent);
         oopsOverlayColor.a = hoodAlpha;
         oopsOverlay.color = oopsOverlayColor;
