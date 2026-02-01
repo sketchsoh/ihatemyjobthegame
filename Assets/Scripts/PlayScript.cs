@@ -23,6 +23,7 @@ public class PlayScript : MonoBehaviour , IPointerEnterHandler
             Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene("Game");
+            SoundManager.Instance.TransitionMusicClip(MusicType.Game, 0.5f, 0.2f);
             Debug.Log("Scene loaded");
         }
     }

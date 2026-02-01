@@ -240,5 +240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55f6c52860f945fab9ad3d483f15a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundFXObject: {fileID: 0}
-  musicSounds: []
+  soundFXObject: {fileID: 3106098177505455213, guid: fa8fb07c7afe7417e9f41f03e82eee8d, type: 3}
+  musicSounds:
+  - {fileID: 8300000, guid: cb98ef387379b41eab0f281f388b9d2b, type: 3}
+  - {fileID: 8300000, guid: 8a3db712078854b4886e5b0a68ea4a08, type: 3}
+  - {fileID: 8300000, guid: 17504057d868446c88d8781c2ca151f8, type: 3}

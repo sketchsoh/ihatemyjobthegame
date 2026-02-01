@@ -53,7 +53,7 @@ public class SoundManager : MonoBehaviour
         Destroy(audioSource.gameObject, clipLength);
     }
 
-    public void TransitionMusicClip(MusicType musicType, float transitionTime = 1.25f)
+    public void TransitionMusicClip(MusicType musicType, float transitionTime = 1.25f, float targetVolume = 0.4f)
     {
         AudioSource nowPlaying = aS1;
         AudioSource target = aS2;
@@ -62,7 +62,7 @@ public class SoundManager : MonoBehaviour
             nowPlaying = aS2;
             target = aS1;
         }
-        StartCoroutine(TransitionMusic(transitionTime, nowPlaying, target, musicType));
+        StartCoroutine(TransitionMusic(transitionTime, nowPlaying, target, musicType, targetVolume));
     }
 
     public void PlayMusicClip(MusicType musicType)
@@ -73,12 +73,13 @@ public class SoundManager : MonoBehaviour
         nowPlaying.Play();
     }
 
-    private IEnumerator TransitionMusic(float duration, AudioSource nowPlaying, AudioSource target, MusicType musicType)
+    private IEnumerator TransitionMusic(float duration, AudioSource nowPlaying, AudioSource target, MusicType musicType, float targetVolume = 0.4f)
     {
         float percent = 0f;
+        float startingVolume = nowPlaying.volume;
         while (nowPlaying.volume > 0f)
         {
-            nowPlaying.volume = Mathf.Lerp(0.4f, 0, percent);
+            nowPlaying.volume = Mathf.Lerp(startingVolume, 0, percent);
             percent += Time.deltaTime / duration;
             yield return null;
         }
@@ -93,7 +94,7 @@ public class SoundManager : MonoBehaviour
         target.UnPause();
         percent = 0;
 
-        while (target.volume < 0.4f)
+        while (target.volume < targetVolume)
         {
             target.volume = Mathf.Lerp(0, 0.4f, percent);
             percent += Time.deltaTime / duration;
@@ -104,6 +105,8 @@ public class SoundManager : MonoBehaviour
 
 public enum MusicType
 {
-    MainMenu
+    MainMenu,
+    Game,
+    Lose
 }
 

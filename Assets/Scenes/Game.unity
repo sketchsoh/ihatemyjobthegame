@@ -756,79 +756,6 @@ MonoBehaviour:
   kidExitSFX:
   - {fileID: 8300000, guid: cb8c3a1d504b6417eb69e0bcfd64214a, type: 3}
   - {fileID: 8300000, guid: e3d95b073a8dd4c669c47a9113242b6a, type: 3}
---- !u!1001 &457037424
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3183145063954331357, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
-      propertyPath: soundFXObject
-      value: 
-      objectReference: {fileID: 3106098177505455213, guid: fa8fb07c7afe7417e9f41f03e82eee8d, type: 3}
-    - target: {fileID: 3183145063954331357, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
-      propertyPath: musicSounds.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3183145063954331357, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
-      propertyPath: 'musicSounds.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 8a3db712078854b4886e5b0a68ea4a08, type: 3}
-    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 960
-      objectReference: {fileID: 0}
-    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 540
-      objectReference: {fileID: 0}
-    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6244089922590274775, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6924252157142199605, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
-      propertyPath: m_Name
-      value: SoundManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7659270641757528744, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
-      propertyPath: m_Volume
-      value: 0.25
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0de5d193b15bc4889af6a01f841c5bf3, type: 3}
 --- !u!1 &506780964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fee9f0d5af594c19ae066e9a57710c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 35
+  speed: 15
 --- !u!1 &857383987
 GameObject:
   m_ObjectHideFlags: 0
@@ -2893,7 +2820,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -4166580829966953713, guid: 18a4383b8cc3d4665ba3cd569ea7ec3e, type: 3}
+  m_Sprite: {fileID: 1302723820812287101, guid: c37fb651c9aac4a1cb23b4bfa48df88a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2913,7 +2840,7 @@ Transform:
   m_GameObject: {fileID: 2048479959}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30, y: 16, z: 0}
+  m_LocalPosition: {x: 30, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3052,4 +2979,3 @@ SceneRoots:
   - {fileID: 2048479961}
   - {fileID: 1237427724}
   - {fileID: 2004800752}
-  - {fileID: 457037424}

@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        hoodMode = false;
+        hoodMode = true;
         gameMode = true;
         kidPresent = false;
         idleTimer = maxIdleTime;
@@ -79,8 +79,8 @@ public class GameManager : MonoBehaviour
             kidPresentTimer -= Time.deltaTime;
             if (kidPresentTimer <= 0f)
             {
-                //Todo: LOSE
                 Debug.Log("LOSE by no interaction");
+                SoundManager.Instance.TransitionMusicClip(MusicType.Lose, 0.5f);
                 SceneManager.LoadScene("Lose1");
             }
             return;
@@ -116,7 +116,6 @@ public class GameManager : MonoBehaviour
         }
 
         interactingTimer = 0.5f;
-
         if (aPress >= 5 && dPress >= 5)
         {
             aPress = 0;
@@ -128,6 +127,11 @@ public class GameManager : MonoBehaviour
                 .WithOnComplete(() => DestroyImmediate(kidPrefab, true))
                 .BindToPositionX(currentKid.transform);
         }
+    }
+
+    private IEnumerator Interact()
+    {
+        yield return new WaitForSeconds(interactingTimer);
     }
     
     private void HoodTimer()
@@ -149,9 +153,9 @@ public class GameManager : MonoBehaviour
         oopsOverlay.color = oopsOverlayColor;
         if (hoodTimer >= hoodTime)
         {
-            //TODO: Lose Scene
             Debug.Log("LOSE By Hood");
             SceneManager.LoadScene("Lose2");
+            SoundManager.Instance.TransitionMusicClip(MusicType.Lose, 0.5f);
         }
     }
     

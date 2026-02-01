@@ -90,6 +90,7 @@ public class HealthBar : MonoBehaviour
                 //TODO: Add Lose Screen
                 Debug.Log("LOSE by game");
                 StopCoroutine(healthBarCoroutine);
+                SoundManager.Instance.TransitionMusicClip(MusicType.Lose, 0.5f);
                 SceneManager.LoadScene("Lose3");
             }
             gameObject.transform.localScale = new Vector3(newHealthBarFill, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
